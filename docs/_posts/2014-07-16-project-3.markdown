@@ -1,0 +1,60 @@
+---
+layout: default
+modal-id: 3
+date: 2014-07-16
+img: pp3.png
+alt: image-alt
+project-date: October, 2022
+client:  Personal Project
+category: Data Analytics/Science
+description: "
+<h2>Palmer Penguins Analysis.</h2>
+<p style='text-align: justify;'> Welcome to my website portfolio, where I provide a detailed introduction
+to the 'palmerpenguins' dataset, shedding light on the penguins observed at the Palmer Station in the Palmer Archipelago
+on Anvers Island, Antarctica. This dataset comprises eight columns, offering valuable information about the penguins'
+species, island of origin, bill length and depth, flipper length, body mass, sex, and the year of data collection.
+With three species—Adelie, Chinstrap, and Gentoo—residing across three islands—Dream, Biscoe, and Torgersen—this 
+dataset allows for correlations between species and sex in terms of anatomical differences. By examining the penguins'
+bill length, bill depth, flipper length, body mass, and other characteristics, we gain insights into their biology,
+behavior, and ecological dynamics in the Palmer Archipelago.</p>
+
+
+<p style='text-align: justify;'>The analysis of the penguin dataset reveals interesting insights regarding the anatomical features of the three species: Adelie, Chinstrap, and Gentoo. Among the species, Gentoo penguins exhibit the largest mean flipper length, with the least amount of deviation, indicating relatively consistent flipper sizes within the population. On the other hand, Chinstrap penguins have the highest standard deviation, suggesting greater variation in flipper length. Adelie penguins have the shortest flipper length on average.</p>
+<p style='text-align: justify;'>Regarding bill depth, Adelie penguins possess the shortest bills, with the least amount of deviation. Gentoo penguins, however, have the highest deviation, indicating more variability in bill depth within the population. Chinstrap penguins exhibit the highest mean value for bill depth.</p>
+<p style='text-align: justify;'>In terms of body mass, Gentoo penguins have the highest mean body mass and the highest deviation, suggesting a broader range of body sizes within the species. Adelie penguins, on the other hand, have the lowest mean body mass.</p>
+<p style='text-align: justify;'>These anatomical differences make the Gentoo species easily distinguishable from the other two species. While Chinstrap and Adelie penguins share some similarities in terms of anatomical features, the Gentoo species stands out with its longer flippers and greater body mass.</p>
+<p style='text-align: justify;' >To provide a visual representation of these findings, Figure 1 presents a summary of the first, median, and third quartile ranges. This plot also highlights any outliers present in the dataset. The plot emphasizes that Gentoo penguins exhibit the highest values for flipper length and body mass while having the lowest bill depth. These distinctive characteristics can be effectively utilized to differentiate the Gentoo species from the other two species. Conversely, Adelie penguins have the shortest bill lengths compared to the relatively higher values observed in both Chinstrap and Gentoo species.</p>
+
+<p style='text-align: center;'>
+ <strong>Figure 1:</strong> Box plot of different variables categorised by species.
+    <br>
+    <img src='img/portfolio/p3/box_all_vars_byspecies.png' alt='Boxplot' style='max-width: 100%; height: auto;'>
+</p>
+
+
+<p style='text-align: justify;'>Figure 2 presents a histogram depicting the distribution of different penguin species based on their flipper length and bill length measured in millimeters (mm). A normal distribution curve was overlaid on the histogram to visualize the potential fit of the combined species data. To assess the normality of the sample data, the Shapiro-Wilk test was performed.</p>
+<p style='text-align: justify;'>The Shapiro-Wilk test yielded p-values of 0.003 for 'Flipper lengths' and 0.0071 for 'Bill lengths.' Since both p-values are less than the significance level of 0.05, the sample data is deemed to deviate significantly from a population that follows a normal distribution.</p>
+<p style='text-align: justify;'>This result implies that the distribution of flipper lengths and bill lengths among the penguin species in the dataset is unlikely to be normally distributed. The deviation from normality suggests the presence of distinct patterns or variations in these anatomical measurements among the different species of penguins.</p>
+
+<p style='text-align: center;'>
+ <strong>Figure 2:</strong> Histogram plot categorised by the three different species, showing their bill lengths (mm) and
+flipper lengths (mm) with a normal distribution plot over it.
+    <br>
+    <img src='img/portfolio/p3/bill_flipp_freq_dist.png' alt='hist plot' style='max-width: 100%; height: auto;'>
+</p>
+
+
+<p style='text-align: justify;'>Estimating the sex of penguins based on measurement data can be crucial, as it eliminates the need for invasive methods to determine gender. Figure 4 illustrates data for different variables, with green and orange points representing males and females, respectively. Upon visual inspection, the most effective method for distinguishing between sexes appears to be the relationship between bill length and bill depth. Additionally, knowledge of body mass in relation to bill depth provides well-separated data for categorizing males and females.</p>
+<p style='text-align: justify;'>In general, larger and deeper beaks, along with greater body mass, increase the likelihood of a penguin being male. To provide probabilities and classification of the data, logistic regression was employed using the sample's continuous data. Probability was scaled by multiple variables, and probabilities were obtained for each variable. The dataset was split into 74% training data and 26% testing data, and logistic regression was applied using the 'tidymodel' package with the 'glm' engine.</p>
+<p style='text-align: justify;'>The logistic regression model yielded predictions with a sensitivity of 0.846, specificity of 0.769, and precision of 0.786. This indicates that the model correctly identified the majority of occurrences, considering the limited amount of available data. Table 2 provides further details on the performance of the prediction model.</p>
+<p style='text-align: center;'>
+ <strong>Figure 3:</strong> Four scatter plots comparing different variables to identify the sex of the penguins.
+    <br>
+    <img src='img/portfolio/p3/comb_forsex.png' alt='scatter plot' style='max-width: 100%; height: auto;'>
+</p>
+
+<p style='text-align: justify;'>In conclusion, the 'palmerpenguins' dataset provides valuable insights into the penguins of the Palmer Archipelago in Antarctica. The analysis reveals distinct anatomical differences among the Adelie, Chinstrap, and Gentoo species, with Gentoo penguins standing out for their larger flipper lengths and body mass. The dataset also allows for non-invasive estimation of penguin sex based on measurements, particularly using bill length, bill depth, and body mass. These findings contribute to our understanding of penguin biology and support conservation efforts in the Antarctic region.</p>
+
+"
+
+---

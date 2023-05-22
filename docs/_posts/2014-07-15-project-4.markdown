@@ -1,0 +1,55 @@
+---
+layout: default
+modal-id: 4
+date: 2022-11-18
+img: bc.png
+alt: image-alt
+project-date: November 2022
+client: Personal Project
+category: Data Science/Analytics
+description: "
+<h2>Breast Cancer Classifier</h2>
+<p style='text-align: justify;'>In this project, the BreastCancer data set is used.
+The data set contains characteristics of the breast tissue samples which were collected from 699 women, using 
+fine needle aspiration cytology (FNAC). In this procedure a thin needle is inserted into an area of abnormal appearing
+breast tissue. The data of nine characteristics of the breast tissue were collected, most notably; Uniformity of the
+cell, size and shape. These were measured on a scale of 1 to 10, lower values indicating healthier cells, whilst larger
+values being malignant cells. In the following sections some explanatory analysis will be conducted, followed by
+different methods of classifiers and their cross validation based on the test error.</p>
+
+<p style='text-align: justify;'>
+The initial data analysis involved the utilization of the pairs function, which enabled the examination of correlations
+between each predictor variable and the resulting response variable. This analysis is crucial in understanding the
+relationships and dependencies within the dataset. The outcomes of this analysis are depicted in Figure 1.
+Upon observing Figure 1, it becomes evident that mitosis exhibits the least correlation when compared to the other
+predictor variables. The correlation values of mitosis with all the other characteristics are below 0.5, indicating
+a relatively weak relationship. On the other hand, cell size and shape display notable correlation values with the
+remaining predictor variables, except for mitoses. These two variables exhibit strong correlations with multiple
+characteristics, indicating their potential significance in predicting the response variable. The pairs function
+provides valuable insights into the interplay between predictor variables and the response variable, shedding light on
+the relative strengths of their associations. This knowledge allows for a more informed selection of variables for
+further analysis and model building, ultimately enhancing the accuracy and effectiveness of the classification process.
+</p>
+<p style='text-align: center;'>
+ <strong>Figure 1:</strong> Scatterplot Matrix showing the relationships between predictor and response variables.
+    <br>
+    <img src='img/portfolio/p4/pairs.png' alt='Pairs Plot' style='max-width: 100%; height: auto;'>
+</p>
+
+<p style='text-align: justify;'>
+After evaluating the test errors of different classifiers, it was found that logistic regression exhibited the lowest
+error rate of 1.005%. This outcome establishes logistic regression as the most effective and accurate classifier for the
+given dataset. Logistic regression utilizes a subset of five predictor variables, namely Cl.thickness, Cell.shape,
+Marg.adhesion, bare.nuclei, and Bl.cromatin. These specific variables have proven to be influential in accurately
+predicting the response variable. On the other hand, the remaining predictor variables were found to have p-values
+greater than the predetermined alpha value of 0.05. Consequently, these variables were deemed insignificant in
+determining the response variable, and their inclusion in the model was considered unnecessary.</p>
+
+<p style='text-align: justify;'>
+This detailed analysis highlights the superiority of logistic regression as the optimal classifier, leveraging a
+carefully chosen set of predictor variables to achieve accurate predictions for the breast cancer dataset at hand.</p>
+
+
+"
+---
+
