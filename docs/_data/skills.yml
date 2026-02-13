@@ -1,12 +1,24 @@
-- Python
-- SQL
-- Machine Learning
-- Statistical Modeling
-- A/B Testing
-- Data Visualization
-- Kubernetes
-- FastAPI
-- FAUST
-- Superset
-- GCP
-- Power BI
+- category: Languages
+  items:
+    - Python
+    - SQL
+
+- category: ML, Stats & Visualization
+  items:
+    - Machine Learning
+    - Statistical Modeling
+    - A/B Testing
+    - Data Visualization
+
+- category: Platforms & Infra
+  items:
+    - Kubernetes
+    - FastAPI
+    - FAUST (stream processing)
+    - GCP
+    - Kafka (real-time streaming)
+
+- category: Tools
+  items:
+    - Git
+    - Docker
