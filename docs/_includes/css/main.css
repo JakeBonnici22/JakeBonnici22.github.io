@@ -293,6 +293,8 @@ img {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   background: var(--button-ghost, #fff);
   color: var(--button-text, var(--accent-2));
+  min-width: 130px;
+  text-align: center;
 }
 
 .button.primary {
@@ -303,8 +305,28 @@ img {
 }
 
 .button.secondary {
-  border-color: var(--accent);
-  color: var(--ink);
+  background: transparent;
+  border-color: var(--accent-2);
+  color: var(--button-text, var(--accent-2));
+}
+
+/* Dark theme button refinements */
+:root[data-theme="graphite"] .button {
+  background: rgba(245, 247, 250, 0.08);
+  border-color: rgba(91, 140, 255, 0.4);
+  color: #eaf0ff;
+}
+
+:root[data-theme="graphite"] .button.primary {
+  background: linear-gradient(120deg, #5b8cff, #2f5fae);
+  border-color: transparent;
+  color: #fff;
+}
+
+:root[data-theme="graphite"] .button.secondary {
+  background: rgba(15, 22, 32, 0.4);
+  border-color: rgba(91, 140, 255, 0.35);
+  color: #eaf0ff;
 }
 
 .button:hover {
