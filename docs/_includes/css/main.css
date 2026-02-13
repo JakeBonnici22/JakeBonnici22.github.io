@@ -514,8 +514,9 @@ img {
 
 .skills-grid {
   display: grid;
-  gap: 20px;
+  gap: 24px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
 }
 
 .skill-group h3 {
@@ -523,7 +524,12 @@ img {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.skill-group {
+  display: grid;
+  gap: 14px;
 }
 
 .skill {
