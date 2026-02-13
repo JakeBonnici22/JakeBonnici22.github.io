@@ -1,0 +1,13 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" rx="32" fill="url(#paint0_linear)" />
+  <path d="M80 360C160 300 250 280 330 300C410 320 460 380 560 400C660 420 710 380 760 340" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="6" fill="none" />
+  <text x="60" y="90" font-family="Work Sans, sans-serif" font-size="28" fill="#FFFFFF" fill-opacity="0.9">Holiday Photo</text>
+  <text x="60" y="125" font-family="Work Sans, sans-serif" font-size="16" fill="#FFFFFF" fill-opacity="0.8">Replace with your image</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7B8A7" />
+      <stop offset="0.5" stop-color="#F6D9A6" />
+      <stop offset="1" stop-color="#A6D7C7" />
+    </linearGradient>
+  </defs>
+</svg>

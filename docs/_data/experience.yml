@@ -1,0 +1,34 @@
+- role: Data Scientist
+  company: Gaming Innovation Group (GiG)
+  location: Saint Julian's, Malta
+  period: Nov 2023 — Present
+  highlights:
+    - Partnered with data engineering and BI to ship dashboards and productized insights.
+    - Improved the Game Recommendation Engine and automated data pipelines for scale.
+    - Revamped content-based filtering and introduced a new vertical sweep to boost relevance.
+    - Built product experience and preference signals to deepen segmentation and personalize journeys.
+
+- role: Associate Data Scientist
+  company: Gaming Innovation Group (GiG)
+  location: Saint Julian's, Malta
+  period: Sep 2023 — Nov 2023
+  highlights:
+    - Developed churn prediction and CLV models using streaming workflows.
+    - Analyzed KPI drivers behind customer deposits and withdrawals.
+    - Delivered actionable insights to stakeholders.
+
+- role: Freelance Data Scientist
+  company: Catering Data Products
+  location: Saint Julian's, Malta
+  period: Mar 2024 — Present
+  highlights:
+    - Built Superset dashboards and deployed them on Google Cloud Platform.
+    - Applied analytics and ML to support business decisions.
+
+- role: Research Assistant
+  company: Electromagnetism Research Group, University of Malta
+  location: Malta
+  period: Jun 2020 — Oct 2021
+  highlights:
+    - Built breast tissue phantoms and processed datasets for medical research models.
+    - Produced statistical analyses and visualizations for experimental results.

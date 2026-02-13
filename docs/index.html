@@ -1,3 +1,200 @@
 ---
 layout: default
+title: Jake Bonnici
 ---
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <p class="eyebrow">Data Scientist · Machine Learning</p>
+      <h1>Jake Bonnici</h1>
+      <p class="lead">
+        Highly motivated data scientist with a focus on statistical modeling, machine learning, and data products that
+        translate messy signals into clear decisions.
+      </p>
+      <div class="tags">
+        <span class="tag">Churn & CLV</span>
+        <span class="tag">Recommenders</span>
+        <span class="tag">Data Products</span>
+      </div>
+      <div class="hero-actions">
+        <a class="button primary" href="mailto:{{ site.email }}">Email Me</a>
+        <a class="button secondary" href="{{ site.github }}" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="button secondary" href="{{ site.linkedin }}" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <img src="{{ '/img/headshot.jpg' | relative_url }}" alt="Headshot" />
+      <ul class="fact-list">
+        <li>Data Scientist at Gaming Innovation Group (GiG)</li>
+        <li>MSc Data Science, Newcastle University</li>
+      </ul>
+      <p class="live-stats" id="github-stats">GitHub stats loading…</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">A snapshot of the data work I love to build.</p>
+      </div>
+    </div>
+    <div class="grid two">
+      {% for project in site.data.projects %}
+      <article class="card reveal" data-github="{{ project.github_repo }}">
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.summary }}</p>
+        <div class="tags">
+          {% for tag in project.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% if project.github_repo %}
+        <p class="project-stats" data-github="{{ project.github_repo }}">Loading live stats…</p>
+        {% endif %}
+        <div class="project-links">
+          <a href="{{ project.repo }}" target="_blank" rel="noreferrer">View repository →</a>
+          {% if project.extra_url %}
+          <a href="{{ project.extra_url }}" target="_blank" rel="noreferrer">{{ project.extra_label }} →</a>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">Recent roles, collaborations, and research work.</p>
+      </div>
+    </div>
+    <div class="timeline">
+      {% for role in site.data.experience %}
+      <div class="timeline-item reveal">
+        <h3>{{ role.role }} · {{ role.company }}</h3>
+        <p class="meta">{{ role.location }} · {{ role.period }}</p>
+        <ul>
+          {% for item in role.highlights %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="education">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Education</h2>
+        <p class="section-subtitle">Academic foundations in data science, mathematics, and physics.</p>
+      </div>
+    </div>
+    <div class="grid two">
+      {% for edu in site.data.education %}
+      <article class="card reveal">
+        <h3>{{ edu.degree }}</h3>
+        <p class="muted">{{ edu.school }} · {{ edu.period }}</p>
+        <ul>
+          {% for detail in edu.details %}
+          <li>{{ detail }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">Tools and methods I reach for most often.</p>
+      </div>
+    </div>
+    <div class="skills reveal">
+      {% for skill in site.data.skills %}
+      <span class="skill">{{ skill }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="research">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Research</h2>
+        <p class="section-subtitle">Published work and academic collaborations.</p>
+      </div>
+    </div>
+    <div class="grid two">
+      {% for paper in site.data.research %}
+      <article class="card reveal">
+        <h3>{{ paper.title }}</h3>
+        <p class="muted">{{ paper.venue }}</p>
+        <p>{{ paper.summary }}</p>
+        {% if paper.link %}
+        <a href="{{ paper.link }}" target="_blank" rel="noreferrer">Read paper →</a>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="life">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Life</h2>
+        <p class="section-subtitle">Holiday snapshots and moments away from the keyboard.</p>
+      </div>
+      <a href="{{ '/life/' | relative_url }}">View full gallery →</a>
+    </div>
+    <div class="grid life-grid gallery-grid">
+      {% for shot in site.data.life limit: 6 %}
+      <figure class="card life-card reveal">
+        <img src="{{ shot.image | relative_url }}" alt="{{ shot.alt | default: 'Holiday photo' }}" />
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">Open to collaborations, data projects, and friendly hellos.</p>
+      </div>
+    </div>
+    <div class="grid two">
+      <article class="card reveal">
+        <h3>Say hello</h3>
+        <p class="muted">{{ site.email }}</p>
+        <a href="mailto:{{ site.email }}">Send an email →</a>
+      </article>
+      <article class="card reveal">
+        <h3>Find me online</h3>
+        <p class="muted">GitHub and LinkedIn.</p>
+        <div class="tags">
+          <a class="tag" href="{{ site.github }}" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="tag" href="{{ site.linkedin }}" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

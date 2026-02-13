@@ -1,0 +1,6 @@
+# Jekyll / Bundler
+/docs/.bundle/
+/docs/vendor/
+/docs/.jekyll-cache/
+/docs/.sass-cache/
+/docs/_site/

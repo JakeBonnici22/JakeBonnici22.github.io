@@ -1,24 +1,65 @@
-<!DOCTYPE html>
-<html>
-{% include head.html %}
+<!doctype html>
+<html lang="en" data-theme="{{ site.site_theme | default: 'executive' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ site.description }}" />
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ '/feed.xml' | relative_url }}" />
 
-<body id="page-top" class="index">
-  {% include nav.html %}
-  {% include header.html %}
-  {% include portfolio_grid.html %}
-  {% include about.html %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <nav class="nav-links">
+          <a href="{{ '/' | relative_url }}#projects">Projects</a>
+          <a href="{{ '/' | relative_url }}#experience">Experience</a>
+          <a href="{{ '/' | relative_url }}#life">Life</a>
+          <a href="{{ '/' | relative_url }}#contact">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">Theme</button>
+          <a class="nav-cta" href="mailto:{{ site.email }}">Let’s talk</a>
+        </div>
+      </div>
+    </header>
 
-  {% if site.contact == "static" %}
-  {% include contact_static.html %}
-  {% elsif site.contact == "disqus" %}
-  {% include contact_disqus.html %}
-  {% else %}
-  {% include contact.html %}
-  {% endif %}
+    <main>
+      {{ content }}
+    </main>
 
-  {% include footer.html %}
-  {% include modals.html %}
-  {% include js.html %}
-</body>
-
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <p class="footer-title">Let’s build something useful.</p>
+          <p class="muted">{{ site.location }} · {{ site.email }}</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:{{ site.email }}">Email</a>
+          <a href="{{ site.github }}" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="{{ site.linkedin }}" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+    <script src="{{ '/js/site.js' | relative_url }}"></script>
+    <script>
+      (() => {
+        const params = new URLSearchParams(window.location.search);
+        const theme = params.get("theme");
+        if (theme) {
+          document.documentElement.setAttribute("data-theme", theme);
+        }
+      })();
+    </script>
+  </body>
 </html>

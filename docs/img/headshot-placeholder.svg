@@ -1,0 +1,6 @@
+<svg width="600" height="720" viewBox="0 0 600 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="720" rx="40" fill="#E7EBF1" />
+  <circle cx="300" cy="260" r="120" fill="#CBD3DD" />
+  <rect x="150" y="410" width="300" height="200" rx="80" fill="#CBD3DD" />
+  <text x="300" y="670" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="28" fill="#5B6674">Headshot coming soon</text>
+</svg>
