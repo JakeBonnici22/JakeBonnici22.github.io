@@ -512,6 +512,20 @@ img {
   gap: 10px;
 }
 
+.skills-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.skill-group h3 {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
 .skill {
   padding: 7px 14px;
   background: var(--skill-bg);

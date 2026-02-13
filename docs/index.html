@@ -123,9 +123,16 @@ title: Jake Bonnici
         <p class="section-subtitle">Tools and methods I reach for most often.</p>
       </div>
     </div>
-    <div class="skills reveal">
-      {% for skill in site.data.skills %}
-      <span class="skill">{{ skill }}</span>
+    <div class="skills-grid">
+      {% for group in site.data.skills %}
+      <div class="skill-group reveal">
+        <h3>{{ group.category }}</h3>
+        <div class="skills">
+          {% for item in group.items %}
+          <span class="skill">{{ item }}</span>
+          {% endfor %}
+        </div>
+      </div>
       {% endfor %}
     </div>
   </div>
