@@ -2,23 +2,32 @@
   items:
     - Python
     - SQL
+    - Bash
 
-- category: ML, Stats & Visualization
+- category: ML & Data Science
   items:
     - Machine Learning
     - Statistical Modeling
     - A/B Testing
+    - Feature Engineering
+    - Scikit-learn
+    - XGBoost
+    - Pandas & NumPy
     - Data Visualisation
 
-- category: Platforms & Infra
+- category: Platforms & Infrastructure
   items:
-    - Kubernetes
-    - FastAPI
+    - Apache Kafka
     - FAUST (stream processing)
+    - FastAPI
     - GCP
-    - Kafka (real-time streaming)
+    - Kubernetes
+    - Apache Airflow
+    - Apache Superset
 
 - category: Tools
   items:
     - Git
     - Docker
+    - Jupyter
+    - Plotly

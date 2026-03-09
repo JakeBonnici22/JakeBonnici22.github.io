@@ -1,19 +1,21 @@
 - name: CF-Recommender
-  summary: Collaborative filtering recommender system for personalized suggestions and similarity-driven discovery.
+  summary: A collaborative filtering recommender system that generates personalised item suggestions using user-item interaction matrices and similarity-driven neighbourhood models.
   repo: https://github.com/JakeBonnici22/CF-Recommender
   github_repo: JakeBonnici22/CF-Recommender
   tags:
     - Recommender Systems
     - Python
     - Machine Learning
+    - Scikit-learn
 
-- name: F1 Data
-  summary: Formula 1 data exploration and analysis with a focus on performance trends and season insights.
+- name: F1 Data Analysis
+  summary: Formula 1 performance analytics exploring season trends, driver comparisons, and championship scenarios — including a simulation of probable 2025 title paths.
   repo: https://github.com/JakeBonnici22/f1-data
   github_repo: JakeBonnici22/f1-data
-  extra_label: Read analysis
+  extra_label: Read the analysis
   extra_url: https://www.linkedin.com/pulse/simulating-paths-victory-2025-f1-title-jake-bonnici-6gdgf/
   tags:
     - Data Analysis
-    - Visualization
+    - Python
+    - Visualisation
     - Sports Analytics
