@@ -1,4 +1,4 @@
 - title: Learning Word-Sense and Image Embeddings for Word Sense Disambiguation
-  venue: SemEval 2023 · ACL Anthology (UoR-NCL)
-  summary: Developed an NLP pipeline that jointly learns word-sense and image embeddings to match word senses to visual contexts using similarity scoring — submitted as part of SemEval Task 1 (Visual WSD).
+  venue: SemEval 2023 · ACL Anthology · Toronto, Canada
+  summary: Designed an NLP pipeline that jointly learns word-sense and image embeddings, matching ambiguous word senses to visual contexts using cross-modal similarity scoring. Submitted as part of SemEval Task 1 (Visual WSD) and published in the ACL Anthology.
   link: https://aclanthology.org/2023.semeval-1.3/

@@ -1,34 +1,33 @@
 - role: Data Scientist
   company: Gaming Innovation Group (GiG)
   location: Saint Julian's, Malta
-  period: Nov 2023 — Present
+  period: Jan 2025 — Present
   highlights:
-    - Redesigned the Game Recommendation Engine using content-based filtering and a vertical sweep approach, improving recommendation relevance across player segments.
-    - Built and productized player experience and preference signals to power deeper segmentation and personalised player journeys.
-    - Automated key data pipelines for scale, reducing manual intervention and improving data freshness across the platform.
-    - Collaborated with data engineering and BI teams to ship dashboards that translate model outputs into actionable stakeholder insights.
+    - Improved Game Recommendation Engine quality and efficiency — achieved +6.4% CTR lift by optimising ranking features.
+    - Reduced GRE infrastructure cost by ~18% via container resource tuning, batching, and request-level profiling in Kubernetes.
+    - Owned production deployment of Churn and CLV models end-to-end.
+    - Designed SQL schemas and feature tables for model outputs, enabling BI consumption and consistent downstream analytics.
+    - Implemented ML service endpoints using FastAPI and streaming pipelines with FAUST for near real-time inference workloads.
 
 - role: Associate Data Scientist
   company: Gaming Innovation Group (GiG)
   location: Saint Julian's, Malta
-  period: Sep 2023 — Nov 2023
+  period: Dec 2023 — Dec 2024
   highlights:
-    - Developed churn prediction and Customer Lifetime Value (CLV) models using Kafka-based streaming workflows.
-    - Identified and quantified KPI drivers behind player deposit and withdrawal behaviour.
-    - Delivered concise, actionable insight reports to business stakeholders across product and marketing.
+    - Productionised early churn and CLV pipelines in a FAUST-based streaming architecture — improved reliability through retries, idempotency, and data validation.
+    - Delivered behavioural KPI analysis on player deposits and withdrawals, packaged as repeatable SQL and Python workflows for stakeholder reporting.
+
+- role: Data Scientist Intern
+  company: Gaming Innovation Group (GiG)
+  location: Saint Julian's, Malta
+  period: Sep 2023
+  highlights:
+    - Built churn and CLV modelling baselines from first principles — performed EDA, feature construction, and offline evaluation to support production rollout.
 
 - role: Freelance Data Scientist
-  company: Catering Data Products
+  company: Independent Consulting
   location: Malta
-  period: Mar 2024 — Present
+  period: Jan 2025 — Present
   highlights:
-    - Designed and deployed Apache Superset dashboards on Google Cloud Platform to give operational visibility across the business.
-    - Applied ML models to support demand forecasting and data-driven operational decisions.
-
-- role: Research Assistant
-  company: Electromagnetism Research Group, University of Malta
-  location: Malta
-  period: Jun 2020 — Oct 2021
-  highlights:
-    - Fabricated breast tissue phantoms and curated datasets for experimental medical imaging research.
-    - Produced statistical analyses and visualisations to support publication-ready experimental results.
+    - Designed and deployed Apache Superset dashboards on Google Cloud Platform, providing operational visibility and data-driven decision support across a catering business.
+    - Applied ML demand forecasting models to reduce planning overhead and support operational efficiency.

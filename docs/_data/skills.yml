@@ -1,33 +1,39 @@
-- category: Languages
+- category: Core Specialisations
+  items:
+    - Churn & CLV Modeling
+    - Recommender Systems
+    - Lifecycle Modeling
+    - Statistical Modeling
+    - Feature Engineering
+    - A/B Testing
+    - NLP
+
+- category: ML & Libraries
+  items:
+    - Scikit-learn
+    - XGBoost
+    - Pandas & NumPy
+    - Machine Learning
+
+- category: Data Engineering
+  items:
+    - Apache Kafka
+    - FAUST (stream processing)
+    - Apache Airflow
+    - FastAPI
+    - Docker
+    - Kubernetes
+
+- category: Cloud & Infrastructure
+  items:
+    - AWS
+    - GCP
+    - Apache Superset
+
+- category: Languages & Tools
   items:
     - Python
     - SQL
     - Bash
-
-- category: ML & Data Science
-  items:
-    - Machine Learning
-    - Statistical Modeling
-    - A/B Testing
-    - Feature Engineering
-    - Scikit-learn
-    - XGBoost
-    - Pandas & NumPy
-    - Data Visualisation
-
-- category: Platforms & Infrastructure
-  items:
-    - Apache Kafka
-    - FAUST (stream processing)
-    - FastAPI
-    - GCP
-    - Kubernetes
-    - Apache Airflow
-    - Apache Superset
-
-- category: Tools
-  items:
     - Git
-    - Docker
     - Jupyter
-    - Plotly

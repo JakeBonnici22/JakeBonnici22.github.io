@@ -1,7 +1,16 @@
+- name: Orchid
+  summary: A lifecycle intelligence platform for product-led SaaS. Models customer movement through behavioral, billing, and CRM data using a lifecycle state machine — surfacing churn risk, activation gaps, and expansion signals as BI-ready outputs deployed to AWS.
+  repo: https://github.com/JakeBonnici22
+  tags:
+    - Data Products
+    - Lifecycle Modeling
+    - Python
+    - AWS
+    - Revenue Intelligence
+
 - name: CF-Recommender
-  summary: A collaborative filtering recommender system that generates personalised item suggestions using user-item interaction matrices and similarity-driven neighbourhood models.
+  summary: A collaborative filtering recommender system built from first principles — generating personalised item suggestions from user-item interaction matrices using similarity-driven neighbourhood models.
   repo: https://github.com/JakeBonnici22/CF-Recommender
-  github_repo: JakeBonnici22/CF-Recommender
   tags:
     - Recommender Systems
     - Python
@@ -9,9 +18,8 @@
     - Scikit-learn
 
 - name: F1 Data Analysis
-  summary: Formula 1 performance analytics exploring season trends, driver comparisons, and championship scenarios — including a simulation of probable 2025 title paths.
+  summary: Formula 1 performance analytics exploring season trends, driver comparisons, and championship scenarios — including a probabilistic simulation of 2025 title paths.
   repo: https://github.com/JakeBonnici22/f1-data
-  github_repo: JakeBonnici22/f1-data
   extra_label: Read the analysis
   extra_url: https://www.linkedin.com/pulse/simulating-paths-victory-2025-f1-title-jake-bonnici-6gdgf/
   tags:
