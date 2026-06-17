@@ -12,8 +12,9 @@
   items:
     - Scikit-learn
     - XGBoost
+    - MLflow
     - Pandas & NumPy
-    - Machine Learning
+    - Spark
 
 - category: Data Engineering
   items:
@@ -26,9 +27,10 @@
 
 - category: Cloud & Infrastructure
   items:
-    - AWS
     - GCP
+    - AWS
     - Apache Superset
+    - CKAD Certified
 
 - category: Languages & Tools
   items:

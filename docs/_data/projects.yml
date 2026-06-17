@@ -9,21 +9,22 @@
     - Revenue Intelligence
 
 - name: CF-Recommender
-  summary: A collaborative filtering recommender system built from first principles — generating personalised item suggestions from user-item interaction matrices using similarity-driven neighbourhood models.
+  summary: End-to-end collaborative filtering system built from first principles — user-item interaction matrices, similarity-driven neighbourhood models, MLflow experiment tracking, FastAPI inference serving, and Docker deployment.
   repo: https://github.com/JakeBonnici22/CF-Recommender
   tags:
     - Recommender Systems
     - Python
-    - Machine Learning
-    - Scikit-learn
+    - MLflow
+    - FastAPI
+    - Docker
 
-- name: F1 Data Analysis
-  summary: Formula 1 performance analytics exploring season trends, driver comparisons, and championship scenarios — including a probabilistic simulation of 2025 title paths.
-  repo: https://github.com/JakeBonnici22/f1-data
+- name: F1 2025 Title Prediction
+  summary: Monte Carlo season simulation estimating probabilistic championship outcomes and win probability distributions across thousands of simulated scenarios — modelling driver performance, reliability, and points trajectories.
+  repo: https://github.com/JakeBonnici22/f1-2025-title-prediction
   extra_label: Read the analysis
   extra_url: https://www.linkedin.com/pulse/simulating-paths-victory-2025-f1-title-jake-bonnici-6gdgf/
   tags:
-    - Data Analysis
+    - Monte Carlo Simulation
+    - Probabilistic Modelling
     - Python
-    - Visualisation
     - Sports Analytics
