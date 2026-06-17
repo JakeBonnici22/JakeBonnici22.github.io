@@ -60,7 +60,7 @@ title: Jake Bonnici
         <p class="project-stats" data-github="{{ project.github_repo }}">Loading live stats…</p>
         {% endif %}
         <div class="project-links">
-          <a href="{{ project.repo }}" target="_blank" rel="noreferrer">View repository →</a>
+          <a href="{{ project.repo }}" target="_blank" rel="noreferrer">{{ project.repo_label | default: "View repository" }} →</a>
           {% if project.extra_url %}
           <a href="{{ project.extra_url }}" target="_blank" rel="noreferrer">{{ project.extra_label }} →</a>
           {% endif %}

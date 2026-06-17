@@ -1,6 +1,7 @@
 - name: Orchid
   summary: A lifecycle intelligence platform for product-led SaaS. Models customer movement through behavioral, billing, and CRM data using a lifecycle state machine — surfacing churn risk, activation gaps, and expansion signals as BI-ready outputs deployed to AWS.
   repo: https://www.orchidatalab.com
+  repo_label: Visit site
   tags:
     - Data Products
     - Lifecycle Modeling
