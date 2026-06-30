@@ -1,0 +1,289 @@
+---
+layout: default
+title: "Building an Autonomous Sports-Betting System"
+description: "A production-grade, fully automated value-betting system for tennis and soccer — XGBoost with isotonic calibration, Elo features, vig-removed market signals, and fractional-Kelly staking, deployed as Dockerised microservices."
+permalink: /projects/sports-betting/
+---
+
+<style>
+  .sb-metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .sb-metric {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+  }
+  .sb-metric .num {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--accent-2);
+    line-height: 1.1;
+  }
+  .sb-metric .label {
+    color: var(--muted);
+    font-size: 0.86rem;
+    margin-top: 6px;
+  }
+  .sb-pipeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+  }
+  .sb-pipeline li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .sb-pipeline li:last-child { border-bottom: 0; }
+  .sb-pipeline .t {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    color: var(--accent-2);
+  }
+  .sb-formula {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.92rem;
+    color: var(--ink);
+    overflow-x: auto;
+    white-space: pre-wrap;
+    line-height: 1.7;
+  }
+  .sb-disclaimer {
+    border-left: 3px solid var(--accent);
+    padding: 10px 16px;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .prose .card h3 { margin-top: 0; }
+</style>
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow"><span class="status-dot"></span>Project · Quantitative Systems · Self-hosted</p>
+    <h1>Building an Autonomous Sports-Betting System</h1>
+    <p class="lead">
+      A production-grade, fully automated value-betting engine for tennis and soccer. It fetches live odds,
+      retrains calibrated models daily, detects mispriced markets, and sizes risk with fractional Kelly —
+      running 24/7 as Dockerised microservices on private infrastructure.
+    </p>
+    <div class="tags">
+      <span class="tag">XGBoost</span>
+      <span class="tag">Isotonic Calibration</span>
+      <span class="tag">Elo Features</span>
+      <span class="tag">Kelly Criterion</span>
+      <span class="tag">FastAPI</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">Docker Compose</span>
+      <span class="tag">React</span>
+      <span class="tag">MLflow</span>
+    </div>
+    <div class="hero-actions">
+      <a class="button secondary" href="{{ '/' | relative_url }}">← Back to portfolio</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">The idea</h2>
+        <p class="section-subtitle">Betting markets are sharp — but not perfect.</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>
+        Bookmakers price events with an embedded margin (the <em>vig</em>), so the implied probabilities you
+        read off the odds always sum to more than 100%. Strip the vig out and you get the market's honest
+        estimate of who wins. The whole system is built around one question: <strong>can a calibrated model
+        find matches where its probability is meaningfully higher than the market's?</strong> When it can, that
+        gap is a positive-expected-value edge — and the system bets it, carefully.
+      </p>
+    </div>
+    <div class="sb-metric-grid">
+      <div class="sb-metric"><div class="num">≥ 4%</div><div class="label">Minimum EV edge to place a bet</div></div>
+      <div class="sb-metric"><div class="num">0.25</div><div class="label">Fractional Kelly (variance control)</div></div>
+      <div class="sb-metric"><div class="num">Daily</div><div class="label">Automated retrain &amp; reprice</div></div>
+      <div class="sb-metric"><div class="num">2 sports</div><div class="label">Tennis &amp; soccer markets</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Architecture</h2>
+        <p class="section-subtitle">Five containers, one Postgres source of truth, fully orchestrated.</p>
+      </div>
+    </div>
+    <div class="grid two">
+      <article class="card">
+        <h3>Scheduler</h3>
+        <p class="muted">APScheduler</p>
+        <p>Drives the daily pipeline: fetch odds &amp; results, retrain models, run value detection, settle completed bets.</p>
+      </article>
+      <article class="card">
+        <h3>Trainer</h3>
+        <p class="muted">XGBoost + calibration</p>
+        <p>Engineers features and trains calibrated models on a strict time-series split, with runs tracked in MLflow.</p>
+      </article>
+      <article class="card">
+        <h3>API</h3>
+        <p class="muted">FastAPI</p>
+        <p>Serves predictions, today's value bets, P&amp;L, and model-accuracy stats over a clean REST interface.</p>
+      </article>
+      <article class="card">
+        <h3>Dashboard</h3>
+        <p class="muted">React</p>
+        <p>Visualises recommended bets, performance charts, and model calibration history.</p>
+      </article>
+      <article class="card">
+        <h3>Database</h3>
+        <p class="muted">PostgreSQL 15</p>
+        <p>Single source of truth for matches, odds, predictions, and bet ledger.</p>
+      </article>
+      <article class="card">
+        <h3>Tracking</h3>
+        <p class="muted">MLflow</p>
+        <p>Logs every training run — metrics, AUC, calibration — so model drift is visible over time.</p>
+      </article>
+    </div>
+
+    <h3 style="margin-top:32px;">The daily pipeline</h3>
+    <ul class="sb-pipeline">
+      <li><span class="t">05:00 UTC</span><span>Fetch latest odds and match data from the providers.</span></li>
+      <li><span class="t">05:30 UTC</span><span>Retrain XGBoost models on the freshest data.</span></li>
+      <li><span class="t">06:00 UTC</span><span>Value detection + Kelly stake sizing on the day's fixtures.</span></li>
+      <li><span class="t">17:00 UTC</span><span>Evening odds refresh and re-prediction as lines move.</span></li>
+      <li><span class="t">Every 2h</span><span>Auto-settle completed bets and update the P&amp;L ledger.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">How the model works</h2>
+        <p class="section-subtitle">Good features, honest probabilities, no leakage.</p>
+      </div>
+    </div>
+    <div class="grid two">
+      <article class="card">
+        <h3>Feature engineering</h3>
+        <ul>
+          <li><strong>Elo ratings</strong> — dynamic per-player/team strength, updated after every match.</li>
+          <li><strong>Surface-specific Elo</strong> (tennis) — separate Hard / Clay / Grass ratings.</li>
+          <li><strong>Rolling form</strong> — win rate, sets/goals, and goal difference over recent matches.</li>
+          <li><strong>Head-to-head</strong> — historical matchup win rates.</li>
+          <li><strong>Market signals</strong> — vig-removed implied probabilities from sharp bookmakers.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>The model</h3>
+        <ul>
+          <li><strong>XGBoost</strong> with early stopping and regularisation.</li>
+          <li><strong>Isotonic calibration</strong> so a predicted 60% really means 60% — essential when you bet on the probability itself.</li>
+          <li><strong>Time-series split</strong> — always trained on the past, tested on the future. No look-ahead leakage.</li>
+          <li>Soccer is 3-class (home / draw / away); tennis is binary (player 1 wins).</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Finding value &amp; sizing risk</h2>
+        <p class="section-subtitle">An edge is only worth betting if you stake it sensibly.</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Value is the gap between the model's probability and the market's true (vig-removed) probability:</p>
+      <div class="sb-formula">edge = model_probability − vig_removed_market_probability</div>
+      <p>Only matches with an edge of at least 4% become candidates. Each qualifying bet is then staked with
+        fractional Kelly — the mathematically optimal growth rule, deliberately scaled down to tame variance:</p>
+      <div class="sb-formula">f* = 0.25 × (b·p − q) / b&#10;&#10;cap  = 3.0% of bankroll per bet&#10;floor = 0.5% of bankroll per bet</div>
+      <p>Quarter-Kelly with a hard 3% cap keeps drawdowns survivable: the system is built to compound slowly,
+        not to swing for the fences on any single match.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Discipline &amp; honesty</h2>
+        <p class="section-subtitle">Realistic expectations, paper-traded by default.</p>
+      </div>
+    </div>
+    <div class="grid two">
+      <article class="card">
+        <h3>What "good" looks like</h3>
+        <p>At even (2.0) odds the break-even win rate is 50%. The model targets <strong>54–58%</strong> on the
+          bets it actually recommends — a thin but real edge that only pays off through volume and strict
+          staking discipline, typically 2–8 value bets a day.</p>
+      </article>
+      <article class="card">
+        <h3>Risk-first by design</h3>
+        <p>The system paper-trades by default — predictions and stakes are logged, not auto-wagered — so the
+          strategy can be validated against live markets before any capital is committed.</p>
+      </article>
+    </div>
+    <p class="sb-disclaimer" style="margin-top:20px;">
+      No model guarantees profit; past performance does not predict future results. Built and operated as a
+      personal quantitative-systems project, for jurisdictions where such activity is legal.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">What's next</h2>
+        <p class="section-subtitle">Where the edge gets sharper.</p>
+      </div>
+    </div>
+    <div class="grid two">
+      <article class="card">
+        <h3>Closing-line value</h3>
+        <p>Track each bet's price against the closing line — the strongest leading indicator of long-run edge,
+          independent of short-term win/loss noise.</p>
+      </article>
+      <article class="card">
+        <h3>Bet earlier</h3>
+        <p>Place into softer opening lines before the market sharpens, capturing more of the mispricing the
+          model identifies.</p>
+      </article>
+      <article class="card">
+        <h3>Challenger-tour markets</h3>
+        <p>Lower-tier tennis markets are thinner and less efficiently priced — fertile ground for a calibrated
+          model with strong surface-aware features.</p>
+      </article>
+      <article class="card">
+        <h3>Live calibration monitoring</h3>
+        <p>Surface model drift automatically from the MLflow history and trigger retraining when calibration
+          slips.</p>
+      </article>
+    </div>
+  </div>
+</section>
