@@ -8,16 +8,31 @@ permalink: /projects/sports-betting/
 <style>
   .sb-metric-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
-    margin-top: 8px;
+    margin-top: 24px;
   }
   .sb-metric {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
-    padding: 18px 20px;
+    padding: 22px 22px;
   }
+  /* Clean fixed grids so cards aren't thin / unevenly wrapped */
+  .sb-grid {
+    display: grid;
+    gap: 22px;
+    margin-top: 8px;
+  }
+  .sb-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .sb-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) {
+    .sb-grid-2, .sb-grid-3 { grid-template-columns: 1fr; }
+    .sb-metric-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  /* Constrain body text so line length stays readable */
+  .sb-narrow { max-width: 760px; }
+  .prose { max-width: 760px; }
   .sb-metric .num {
     font-size: 1.9rem;
     font-weight: 700;
@@ -75,7 +90,7 @@ permalink: /projects/sports-betting/
   <div class="container">
     <p class="eyebrow"><span class="status-dot"></span>Project · Quantitative Systems · Self-hosted</p>
     <h1>Building an Autonomous Sports-Betting System</h1>
-    <p class="lead">
+    <p class="lead sb-narrow">
       A production-grade, fully automated value-betting engine for tennis and soccer. It fetches live odds,
       retrains calibrated models daily, detects mispriced markets, and sizes risk with fractional Kelly —
       running 24/7 as Dockerised microservices on private infrastructure.
@@ -131,7 +146,7 @@ permalink: /projects/sports-betting/
         <p class="section-subtitle">Five containers, one Postgres source of truth, fully orchestrated.</p>
       </div>
     </div>
-    <div class="grid two">
+    <div class="sb-grid sb-grid-3">
       <article class="card">
         <h3>Scheduler</h3>
         <p class="muted">APScheduler</p>
@@ -183,7 +198,7 @@ permalink: /projects/sports-betting/
         <p class="section-subtitle">Good features, honest probabilities, no leakage.</p>
       </div>
     </div>
-    <div class="grid two">
+    <div class="sb-grid sb-grid-2">
       <article class="card">
         <h3>Feature engineering</h3>
         <ul>
@@ -235,7 +250,7 @@ permalink: /projects/sports-betting/
         <p class="section-subtitle">Realistic expectations, paper-traded by default.</p>
       </div>
     </div>
-    <div class="grid two">
+    <div class="sb-grid sb-grid-2">
       <article class="card">
         <h3>What "good" looks like</h3>
         <p>At even (2.0) odds the break-even win rate is 50%. The model targets <strong>54–58%</strong> on the
@@ -263,7 +278,7 @@ permalink: /projects/sports-betting/
         <p class="section-subtitle">Where the edge gets sharper.</p>
       </div>
     </div>
-    <div class="grid two">
+    <div class="sb-grid sb-grid-2">
       <article class="card">
         <h3>Closing-line value</h3>
         <p>Track each bet's price against the closing line — the strongest leading indicator of long-run edge,
