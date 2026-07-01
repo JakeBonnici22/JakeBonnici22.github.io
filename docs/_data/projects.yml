@@ -9,6 +9,17 @@
     - AWS
     - Revenue Intelligence
 
+- name: Autonomous Sports-Betting System
+  summary: A production-grade, fully automated value-betting system for tennis and soccer — XGBoost with isotonic calibration, Elo and vig-removed market features, and fractional-Kelly staking, deployed as Dockerised microservices with daily retraining.
+  repo: https://jakebonnici22.github.io/projects/sports-betting/
+  repo_label: Read the analysis
+  tags:
+    - Quantitative Modelling
+    - XGBoost
+    - Kelly Criterion
+    - FastAPI
+    - Docker
+
 - name: CF-Recommender
   summary: End-to-end collaborative filtering system built from first principles — user-item interaction matrices, similarity-driven neighbourhood models, MLflow experiment tracking, FastAPI inference serving, and Docker deployment.
   repo: https://github.com/JakeBonnici22/CF-Recommender
