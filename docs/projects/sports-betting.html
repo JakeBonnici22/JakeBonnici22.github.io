@@ -24,10 +24,10 @@ permalink: /projects/sports-betting/
     gap: 22px;
     margin-top: 8px;
   }
-  .sb-grid-2 { grid-template-columns: repeat(2, 1fr); }
-  .sb-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  /* Full-width cards stacked one under the other */
+  .sb-grid-2 { grid-template-columns: 1fr; }
+  .sb-grid-3 { grid-template-columns: 1fr; }
   @media (max-width: 900px) {
-    .sb-grid-2, .sb-grid-3 { grid-template-columns: 1fr; }
     .sb-metric-grid { grid-template-columns: repeat(2, 1fr); }
   }
   /* Constrain body text so line length stays readable */
