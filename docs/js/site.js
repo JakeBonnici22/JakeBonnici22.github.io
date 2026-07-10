@@ -1,36 +1,11 @@
 (() => {
   const root = document.documentElement;
-  const storageKey = "portfolio_theme";
-  const themes = ["graphite", "executive", "minimal"];
 
-  const applyTheme = (theme) => {
-    if (!theme) return;
-    root.setAttribute("data-theme", theme);
-    localStorage.setItem(storageKey, theme);
-    const toggle = document.getElementById("theme-toggle");
-    if (toggle) {
-      const label = theme.charAt(0).toUpperCase() + theme.slice(1);
-      toggle.textContent = `Theme: ${label}`;
-    }
-  };
-
-  const stored = localStorage.getItem(storageKey);
-  if (stored) {
-    applyTheme(stored);
-  } else {
-    const current = root.getAttribute("data-theme");
-    applyTheme(current || themes[0]);
-  }
-
-  const toggle = document.getElementById("theme-toggle");
-  if (toggle) {
-    toggle.addEventListener("click", () => {
-      const current = root.getAttribute("data-theme") || themes[0];
-      const index = themes.indexOf(current);
-      const next = themes[(index + 1) % themes.length];
-      applyTheme(next);
-    });
-  }
+  // Theme is pinned to graphite (clear any previously stored choice)
+  root.setAttribute("data-theme", "graphite");
+  try {
+    localStorage.removeItem("portfolio_theme");
+  } catch (e) {}
 
   // Reveal animations on scroll
   const revealItems = document.querySelectorAll(".reveal");

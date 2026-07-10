@@ -1046,3 +1046,18 @@ button:focus-visible {
 #contact .hero-actions {
   justify-content: center;
 }
+
+/* Interactive hero constellation canvas */
+.hero {
+  position: relative;
+}
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}

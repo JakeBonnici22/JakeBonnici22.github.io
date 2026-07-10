@@ -36,9 +36,6 @@
           <a href="/#research">Publications</a>
           <a href="/#contact">Contact</a>
         </nav>
-        <div class="nav-actions">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">Theme</button>
-        </div>
       </div>
     </header>
 
@@ -62,11 +59,9 @@
     </footer>
     <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
     <script src="/js/site.js"></script>
+    <script src="/js/constellation.js" defer></script>
     <script>
       (() => {
-        const params = new URLSearchParams(window.location.search);
-        const theme = params.get("theme");
-        if (theme) document.documentElement.setAttribute("data-theme", theme);
         const yearEl = document.querySelector(".footer-year");
         if (yearEl) yearEl.textContent = `© ${new Date().getFullYear()}`;
       })();
