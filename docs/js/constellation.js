@@ -8,6 +8,29 @@
   const canvas = document.createElement("canvas");
   canvas.className = "hero-canvas";
   canvas.setAttribute("aria-hidden", "true");
+  // Critical layout inline so the effect never depends on stylesheet delivery:
+  // without these, the canvas would render in-flow and push the page content down.
+  Object.assign(canvas.style, {
+    position: "absolute",
+    top: "0",
+    left: "0",
+    width: "100%",
+    height: "100%",
+    zIndex: "0",
+    pointerEvents: "none",
+  });
+  if (getComputedStyle(hero).position === "static") {
+    hero.style.position = "relative";
+  }
+  const heroContent = hero.querySelector(".container");
+  if (heroContent) {
+    if (getComputedStyle(heroContent).position === "static") {
+      heroContent.style.position = "relative";
+    }
+    if (getComputedStyle(heroContent).zIndex === "auto") {
+      heroContent.style.zIndex = "1";
+    }
+  }
   hero.prepend(canvas);
   const ctx = canvas.getContext("2d");
 
