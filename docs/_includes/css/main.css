@@ -918,3 +918,131 @@ button:focus-visible {
     height: 38px;
   }
 }
+
+/* ============================================================
+   Visual polish layer — 2026-07
+   Scoped overrides; all colors via theme variables.
+   ============================================================ */
+
+/* Hero: larger name with subtle gradient sweep */
+.hero h1 {
+  font-size: clamp(2.9rem, 4.8vw, 4.3rem);
+  letter-spacing: -0.02em;
+  background: linear-gradient(115deg, var(--ink) 55%, var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero fact card: gradient accent bar + label */
+.hero-card {
+  overflow: hidden;
+}
+.hero-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+}
+.hero-card-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* Section titles: gold kicker bar for rhythm */
+.section-title::before {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin-bottom: 14px;
+}
+
+/* Projects: two substantial columns instead of four thin ones */
+#projects .grid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 900px) {
+  #projects .grid.two {
+    grid-template-columns: 1fr;
+  }
+}
+#projects .card h3 {
+  font-size: 1.32rem;
+}
+
+/* Project cards: gradient top bar instead of flat border */
+.project-card {
+  border-top: none;
+  position: relative;
+  overflow: hidden;
+}
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+}
+
+/* Timeline: a little more air and presence */
+.timeline {
+  gap: 30px;
+}
+.timeline-item {
+  padding-left: 30px;
+}
+.timeline-item h3 {
+  font-size: 1.14rem;
+}
+
+/* Skills: slightly larger, easier-to-read pills */
+.skill {
+  font-size: 0.86rem;
+  padding: 7px 15px;
+}
+
+/* Contact: centered call-to-action band */
+#contact .section-header {
+  justify-content: center;
+  text-align: center;
+}
+#contact .section-title::before {
+  margin-left: auto;
+  margin-right: auto;
+}
+#contact .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+#contact .card {
+  max-width: 660px;
+  margin: 0 auto;
+  text-align: center;
+  border-top: none;
+  position: relative;
+  overflow: hidden;
+}
+#contact .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+}
+#contact .hero-actions {
+  justify-content: center;
+}
