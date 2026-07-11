@@ -1056,3 +1056,33 @@ button:focus-visible {
   z-index: 0;
   pointer-events: none;
 }
+
+/* Hero portrait */
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: 50% 28%;
+  border-radius: var(--radius-sm);
+  margin-bottom: 18px;
+  animation: none; /* override the generic hero-card img float */
+}
+
+/* Header without logo: centered nav, visible on mobile too */
+.header-inner {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+@media (max-width: 900px) {
+  .header-inner {
+    grid-template-columns: 1fr;
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    font-size: 0.88rem;
+  }
+}
