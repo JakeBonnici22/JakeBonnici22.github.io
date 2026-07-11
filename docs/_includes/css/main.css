@@ -1057,8 +1057,9 @@ button:focus-visible {
   pointer-events: none;
 }
 
-/* Hero portrait — circular avatar with gradient ring */
-.hero-photo {
+/* Hero portrait — circular avatar with gradient ring.
+   Selector matches .hero-card img specificity to win the override. */
+.hero-card img.hero-photo {
   display: block;
   width: 190px;
   height: 190px;
