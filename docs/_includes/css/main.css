@@ -1057,16 +1057,21 @@ button:focus-visible {
   pointer-events: none;
 }
 
-/* Hero portrait */
+/* Hero portrait — circular avatar with gradient ring */
 .hero-photo {
   display: block;
-  width: 100%;
-  height: 300px;
+  width: 190px;
+  height: 190px;
   object-fit: cover;
-  object-position: 50% 28%;
-  border-radius: var(--radius-sm);
-  margin-bottom: 18px;
+  object-position: 50% 22%;
+  border-radius: 50%;
+  margin: 0 auto 18px;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
   animation: none; /* override the generic hero-card img float */
+}
+.hero-card .hero-card-title {
+  text-align: center;
 }
 
 /* Header without logo: centered nav, visible on mobile too */
